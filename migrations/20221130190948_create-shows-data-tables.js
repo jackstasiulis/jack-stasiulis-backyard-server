@@ -2,6 +2,7 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
+
 exports.up = function(knex) {
   return knex.schema
     .createTable('shows-details', (table) => {
@@ -16,9 +17,9 @@ exports.up = function(knex) {
     })
     .createTable('comments', (table) => {
         table.increments('comment_id').primary();
-        table.string('username').primary();
+        table.string('username').notNullable();
         table.timestamp('comment_posted_at').defaultTo(knex.fn.now());
-        table.string('comment_body').primary()
+        table.string('comment_body').notNullable()
         table.integer('show_id').unsigned()
             .references('show_id')
             .inTable('shows-details')
@@ -32,5 +33,5 @@ exports.up = function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-  return knex.schema.dropTable('shows-details')
+  return knex.schema.dropTable('comments').dropTable('shows-details')
 };
