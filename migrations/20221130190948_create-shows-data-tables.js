@@ -5,8 +5,9 @@
 
 exports.up = function(knex) {
   return knex.schema
-    .createTable('shows-details', (table) => {
+    .createTable('show_data', (table) => {
         table.increments('show_id').primary();
+        table.string('image').notNullable();
         table.string('artist').notNullable();
         table.string('date').notNullable();
         table.string('venue').notNullable();
@@ -15,14 +16,15 @@ exports.up = function(knex) {
         table.string('genre').notNullable();
         table.timestamp('show_posted_at').defaultTo(knex.fn.now());
     })
-    .createTable('comments', (table) => {
+    .createTable('comments_data', (table) => {
         table.increments('comment_id').primary();
         table.string('username').notNullable();
-        table.timestamp('comment_posted_at').defaultTo(knex.fn.now());
+        table.timestamp('timestamp').defaultTo(knex.fn.now());
         table.string('comment_body').notNullable()
+        table.integer('likes').notNullable()
         table.integer('show_id').unsigned()
             .references('show_id')
-            .inTable('shows-details')
+            .inTable('show_data')
             .onUpdate('cascade')
             .onDelete('cascade');
     })
@@ -33,5 +35,5 @@ exports.up = function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-  return knex.schema.dropTable('comments').dropTable('shows-details')
+  return knex.schema.dropTable('comments_data').dropTable('show_data')
 };
