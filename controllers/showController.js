@@ -24,7 +24,21 @@ const comments = (req, res) => {
     );
 };
 
-// const addComments = (req, res) =
+const addComments = (req, res) => {
+    if (
+        !req.body.comment_body
+    ) {
+        return res.status(400).send('Please enter a comment!');
+    }
+    knex('comments_data')
+    .insert(req.body)
+    .then((data) => {
+        res.status(201).send('Comment added!')
+    })
+    .catch((err) => {
+        res.status(500).send('Could not add comment.')
+    });
+};
 
 const getSingleShow = (req, res) => {
     knex('show_data')
@@ -42,5 +56,6 @@ const getSingleShow = (req, res) => {
 module.exports ={
     show,
     comments, 
-    getSingleShow
+    getSingleShow,
+    addComments
 }
