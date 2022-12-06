@@ -25,19 +25,22 @@ const comments = (req, res) => {
 };
 
 const addComments = (req, res) => {
+    console.log(req.body)
     if (
-        !req.body.comment_body
+        !req.body.comments_body
     ) {
         return res.status(400).send('Please enter a comment!');
-    }
+    } else{
     knex('comments_data')
     .insert(req.body)
     .then((data) => {
         res.status(201).send('Comment added!')
     })
     .catch((err) => {
+        console.log(err)
         res.status(500).send('Could not add comment.')
     });
+    }
 };
 
 const getSingleShow = (req, res) => {

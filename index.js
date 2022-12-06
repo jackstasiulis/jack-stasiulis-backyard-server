@@ -7,6 +7,7 @@ const showRoutes = require('./routes/showRoute.js')
 
 
 app.use(cors());
+app.use(express.json());
 // basic home route
 // app.get('/', (req, res) => {
 //   res.send('Welcome to the Backyard API');

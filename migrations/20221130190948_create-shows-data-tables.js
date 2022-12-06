@@ -6,7 +6,7 @@
 exports.up = function(knex) {
   return knex.schema
     .createTable('show_data', (table) => {
-        table.increments('show_id').primary();
+        table.uuid('show_id').primary();
         table.string('image').notNullable();
         table.string('artist').notNullable();
         table.string('date').notNullable();
@@ -18,12 +18,12 @@ exports.up = function(knex) {
         table.timestamp('show_posted_at').defaultTo(knex.fn.now());
     })
     .createTable('comments_data', (table) => {
-        table.increments('comments_id').primary();
+        table.uuid('comments_id').primary();
         table.string('username').notNullable();
         table.timestamp('timestamp').defaultTo(knex.fn.now());
         table.string('comments_body').notNullable()
         table.integer('likes').notNullable()
-        table.integer('show_id').unsigned()
+        table.uuid('show_id')
             .references('show_id')
             .inTable('show_data')
             .onUpdate('cascade')
