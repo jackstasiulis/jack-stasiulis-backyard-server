@@ -14,13 +14,14 @@ exports.up = function(knex) {
         table.string('address').notNullable();
         table.string('doors').notNullable();
         table.string('genre').notNullable();
+        table.string('description').notNullable();
         table.timestamp('show_posted_at').defaultTo(knex.fn.now());
     })
     .createTable('comments_data', (table) => {
-        table.increments('comment_id').primary();
+        table.increments('comments_id').primary();
         table.string('username').notNullable();
         table.timestamp('timestamp').defaultTo(knex.fn.now());
-        table.string('comment_body').notNullable()
+        table.string('comments_body').notNullable()
         table.integer('likes').notNullable()
         table.integer('show_id').unsigned()
             .references('show_id')

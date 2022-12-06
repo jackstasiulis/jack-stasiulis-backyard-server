@@ -12,8 +12,10 @@ const show = (_req, res) => {
     );
 };
 
-const comments = (req, res) =>{
+const comments = (req, res) => {
+    console.log('params', req.params.show_id)
     knex('comments_data')
+    .where('show_id', req.params.show_id )
     .then((data) => {
         res.status(200).json(data);
     }) 
@@ -21,6 +23,8 @@ const comments = (req, res) =>{
         res.status(400).send(`Error retrieving comments: ${err}`)
     );
 };
+
+// const addComments = (req, res) =
 
 const getSingleShow = (req, res) => {
     knex('show_data')
