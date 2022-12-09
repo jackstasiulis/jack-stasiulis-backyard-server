@@ -44,7 +44,7 @@ module.exports =
         venue:'Toys R Us Rooftop',
         address:'1154 W Broadway',
         doors:'8:00 PM',
-        genre:'Lo-fi / Indie Pop',
+        genre:'Indie Pop',
         description: 'lets cry'
         // timestamp: '1628522461000'
     }

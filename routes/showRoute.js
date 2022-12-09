@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const {show, comments, getSingleShow, addComments} = require('../controllers/showController');
+const {show, comments, getSingleShow, addComments, addShow} = require('../controllers/showController');
 
 router.route('/').get(show);
+router.route('/').post(addShow);
 
 
 router.route('/:show_id').get(getSingleShow);

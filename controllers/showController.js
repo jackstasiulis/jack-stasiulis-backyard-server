@@ -43,6 +43,34 @@ const addComments = (req, res) => {
     }
 };
 
+const addShow = (req, res) => {
+    if (
+        !req.body.show_id ||
+        !req.body.image ||
+        !req.body.artist ||
+        !req.body.date ||
+        !req.body.venue ||
+        !req.body.address ||
+        !req.body.doors ||
+        !req.body.genre ||
+        !req.body.description
+    ) {
+        return res.status(400).send('Please fill in all the fields backend')
+    } else {
+    knex('show_data')
+    .insert(req.body)
+    .then((data) => {
+        res.status(201).send('Show added!')
+    })
+    .catch((err) => {
+        console.log(err)
+        res.status(500).send('Could not add show')
+    });
+    }
+}
+
+
+
 const getSingleShow = (req, res) => {
     knex('show_data')
     // .join('comments_data', {'comments_data.show_id': 'show_data.show_id'})
@@ -60,5 +88,6 @@ module.exports ={
     show,
     comments, 
     getSingleShow,
-    addComments
+    addComments,
+    addShow
 }
