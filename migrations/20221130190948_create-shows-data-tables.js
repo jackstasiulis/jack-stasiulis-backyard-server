@@ -52,6 +52,10 @@ exports.up = function(knex) {
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
+
 exports.down = function(knex) {
-  return knex.schema.dropTable('comments_data').dropTable('show_data')
+  return knex.schema
+  .dropTable('comments_data')
+  .dropTable('show_data')
+  .dropTable('users_data')
 };
