@@ -5,7 +5,7 @@ module.exports =
         image: 'https://res.cloudinary.com/do5k651qd/image/upload/v1670570548/Screen_Shot_2022-11-16_at_10.41.43_PM_tvoox9.png',
         artist:'Seeing Strangers',
         date:'Feb, 23, 2023',
-        venue:'The Biltmore Cabaret',
+        venue:'The Biltmore',
         address:'2755 Prince Edward St',
         doors:'7:00 PM',
         genre:'Hip Hop / R & B',
@@ -16,7 +16,7 @@ module.exports =
         show_id:2,
         image: 'https://res.cloudinary.com/do5k651qd/image/upload/v1670570334/Screenshot_2022-12-08_at_11.02.16_PM_azlqpp.jpg',
         artist:'FAVIO',
-        date:'Mar 24 2023',
+        date:'Mar, 24, 2023',
         venue:'The Roxy',
         address:'addyyy pls',
         doors:'7:00 PM',
@@ -62,38 +62,38 @@ module.exports =
     },
     {
         show_id:6,
-        image: 'link',
-        artist:'BADMONEY',
-        date:'Jan2023',
-        venue:'TheCabaret',
-        address:'232St',
-        doors:'8:0PM',
-        genre:'Rock',
-        description: 'letock'
+        image: 'https://res.cloudinary.com/do5k651qd/image/upload/v1670570335/Screenshot_2022-12-08_at_11.05.56_PM_ylptko.jpg',
+        artist:'Saitumi',
+        date:'Mar, 12, 2023',
+        venue:"Saiyana's Yard",
+        address:'TBA',
+        doors:'6:0PM',
+        genre:'Indie Pop',
+        description: 'Saitumi says: Come hang w us for an evening of special artist features and a plethora of genres.'
         // timestamp: '1628522461000'
     },
     {
         show_id:7,
-        image: 'link',
-        artist:'BADMONEY',
-        date:'Jan2023',
-        venue:'TheCabaret',
-        address:'232St',
-        doors:'8:0PM',
-        genre:'Rock',
-        description: 'letock'
+        image: 'https://res.cloudinary.com/do5k651qd/image/upload/v1670570307/IMG_2283_ez6w3s.heic',
+        artist:'Zach Irish',
+        date:'Mar, 20, 2023',
+        venue:'The Fringe Café',
+        address:'3124 W Broadway',
+        doors:'8:00PM',
+        genre:'Folk',
+        description: 'Zach Irish is bringing a special heartwarming nostalgia few and far between on our evening streets. Capitalize on some sweet acoustic vibes and dangerously blown speakers out at the Fringe Café.'
         // timestamp: '1628522461000'
     },
-    {
+    { 
         show_id:8,
         image: 'link',
-        artist:'BADMONEY',
-        date:'Jan2023',
-        venue:'TheCabaret',
-        address:'232St',
-        doors:'8:0PM',
-        genre:'Rock',
-        description: 'letock'
+        artist:'jackstas',
+        date:'Feb, 24, 2023',
+        venue:'The Biltmore',
+        address:'2755 Prince Edward St',
+        doors:'7:00PM',
+        genre:'Lo-Fi',
+        description: "For his third show, jack will show you his production and vocal 'skill' while trying to keep his nerve on stage. Be sure to be there, you won't want to miss this one. "
         // timestamp: '1628522461000'
     },
 ]
