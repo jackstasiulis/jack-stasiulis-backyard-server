@@ -14,6 +14,18 @@ app.use(express.json());
 // });
 app.use('/shows', showRoutes);
 
+// check JWT token middleware
+function checkToken(req, res, next) {
+  const token = req.headers.authorization.split(' ')[1];
+// check an verify JWT token
+  if (token && jwt.verify(token, JWT_SECRET)) {
+    req.user = jwt.decode(token); // this attaches the decoded token to the request object
+    next();
+  } else {
+    next();
+  }
+}
+
 
 app.listen(PORT, () => {
   console.log(`running at http://localhost:${PORT}`);
