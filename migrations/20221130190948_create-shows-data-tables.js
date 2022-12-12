@@ -5,6 +5,14 @@
 
 exports.up = function(knex) {
   return knex.schema
+
+  .createTable('users_data', (table) => {
+    table.uuid('users_id').primary();
+    table.string('username').notNullable();
+    table.string('email').notNullable();
+    table.string('password').notNullable();
+    table.string('avatar').notNullable();
+  })
     .createTable('show_data', (table) => {
         table.uuid('show_id').primary();
         table.string('image').notNullable();
@@ -16,13 +24,22 @@ exports.up = function(knex) {
         table.string('genre').notNullable();
         table.string('description').notNullable();
         table.timestamp('show_posted_at').defaultTo(knex.fn.now());
+        table.uuid('users_id')
+            .references('users_id')
+            .inTable('users_data')
+            .onUpdate('cascade')
+            .onDelete('cascade');
     })
     .createTable('comments_data', (table) => {
         table.uuid('comments_id').primary();
-        table.string('username').notNullable();
         table.timestamp('timestamp').defaultTo(knex.fn.now());
         table.string('comments_body').notNullable()
         table.integer('likes').notNullable()
+        table.uuid('users_id')
+            .references('users_id')
+            .inTable('users_data')
+            .onUpdate('cascade')
+            .onDelete('cascade');
         table.uuid('show_id')
             .references('show_id')
             .inTable('show_data')

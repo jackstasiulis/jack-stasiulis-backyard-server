@@ -18,7 +18,7 @@ module.exports =
         artist:'FAVIO',
         date:'Mar, 24, 2023',
         venue:'The Roxy',
-        address:'addyyy pls',
+        address:'932 Granville',
         doors:'7:00 PM',
         genre:'Latin',
         description: 'lets dance'
@@ -40,12 +40,12 @@ module.exports =
         show_id:4,
         image: 'https://res.cloudinary.com/do5k651qd/image/upload/c_crop,g_custom,h_1852,w_2796,x_0,y_-300/v1670570335/IMG_3535_fofovb.jpg',
         artist:'killr kate',
-        date:'Dec, 4, 2022',
+        date:'Dec, 24, 2022',
         venue:'Toys R Us Rooftop',
         address:'1154 W Broadway',
         doors:'8:00 PM',
         genre:'Indie Pop',
-        description: 'Come see killr kate woo you with her unique and displaced voice. Wear your best skeleton mask to fit in.'
+        description: 'Come see killr kate woo you with her unique and displaced voice. Wear your best skeleton gloves to fit in.'
         // timestamp: '1628522461000'
     },
     {
@@ -74,7 +74,7 @@ module.exports =
     },
     {
         show_id:7,
-        image: 'https://res.cloudinary.com/do5k651qd/image/upload/v1670570307/IMG_2283_ez6w3s.heic',
+        image: 'https://res.cloudinary.com/do5k651qd/image/upload/c_crop,g_custom,h_1852,w_2796,x_0,y_-300/v1670570307/IMG_2283_ez6w3s.jpg',
         artist:'Zach Irish',
         date:'Mar, 20, 2023',
         venue:'The Fringe Café',
@@ -86,7 +86,7 @@ module.exports =
     },
     { 
         show_id:8,
-        image: 'link',
+        image: 'https://res.cloudinary.com/do5k651qd/image/upload/c_crop,g_custom,h_1852,w_2796,x_0,y_-300/v1670570334/IMG_2628_xdqk99.jpg',
         artist:'jackstas',
         date:'Feb, 24, 2023',
         venue:'The Biltmore',
