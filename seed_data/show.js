@@ -9,7 +9,8 @@ module.exports =
         address:'2755 Prince Edward St',
         doors:'7:00 PM',
         genre:'Hip Hop / R & B',
-        description: 'Picture brockhampton but shittier'
+        description: 'Picture brockhampton but shittier',
+        users_id:1
         // timestamp: '1628522461000'
     },
     {
@@ -21,7 +22,8 @@ module.exports =
         address:'932 Granville',
         doors:'7:00 PM',
         genre:'Latin',
-        description: 'lets dance'
+        description: 'lets dance',
+        users_id:1
         // timestamp: '1628522461000'
     },
     {
@@ -33,7 +35,8 @@ module.exports =
         address:'2321 Main St',
         doors:'8:00 PM',
         genre:'Rock',
-        description: 'lets rock'
+        description: 'lets rock',
+        users_id:1
         // timestamp: '1628522461000'
     },
     {
@@ -45,7 +48,8 @@ module.exports =
         address:'1154 W Broadway',
         doors:'8:00 PM',
         genre:'Indie Pop',
-        description: 'Come see killr kate woo you with her unique and displaced voice. Wear your best skeleton gloves to fit in.'
+        description: 'Come see killr kate woo you with her unique and displaced voice. Wear your best skeleton gloves to fit in.',
+        users_id:1
         // timestamp: '1628522461000'
     },
     {
@@ -57,7 +61,8 @@ module.exports =
         address:'TBA',
         doors:'10:00 PM',
         genre:'Grunge',
-        description: 'If you adore the mosh and throwing down a little too hard than your doctor wishes, come put your bodily health in jeopardy in our dirty basement.'
+        description: 'If you adore the mosh and throwing down a little too hard than your doctor wishes, come put your bodily health in jeopardy in our dirty basement.',
+        users_id:1
         // timestamp: '1628522461000'
     },
     {
@@ -69,7 +74,8 @@ module.exports =
         address:'TBA',
         doors:'6:0PM',
         genre:'Indie Pop',
-        description: 'Saitumi says: Come hang w us for an evening of special artist features and a plethora of genres.'
+        description: 'Saitumi says: Come hang w us for an evening of special artist features and a plethora of genres.',
+        users_id:1
         // timestamp: '1628522461000'
     },
     {
@@ -81,7 +87,8 @@ module.exports =
         address:'3124 W Broadway',
         doors:'8:00PM',
         genre:'Folk',
-        description: 'Zach Irish is bringing a special heartwarming nostalgia few and far between on our evening streets. Capitalize on some sweet acoustic vibes and dangerously blown speakers out at the Fringe Café.'
+        description: 'Zach Irish is bringing a special heartwarming nostalgia few and far between on our evening streets. Capitalize on some sweet acoustic vibes and dangerously blown speakers out at the Fringe Café.',
+        users_id:2
         // timestamp: '1628522461000'
     },
     { 
@@ -93,7 +100,8 @@ module.exports =
         address:'2755 Prince Edward St',
         doors:'7:00PM',
         genre:'Lo-Fi',
-        description: "For his third show, jack will show you his production and vocal 'skill' while trying to keep his nerve on stage. Be sure to be there, you won't want to miss this one. "
+        description: "For his third show, jack will show you his production and vocal 'skill' while trying to keep his nerve on stage. Be sure to be there, you won't want to miss this one. ",
+        users_id:1
         // timestamp: '1628522461000'
     },
 ]

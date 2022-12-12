@@ -5,6 +5,7 @@ const cors = require('cors')
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const knex = require('knex')(require('../knexfile'));
 
 const showRoutes = require('./routes/showRoute.js')
 
@@ -30,16 +31,7 @@ function checkToken(req, res, next) {
   }
 }
 
-//  Our user data
-const users = [
-  {
-    id: 1,
-    username: 'jackstas',
-    email: 'jackstasiulis@gmail.com',
-    password: 'backyard23',
-    avatar: 'X'
-  }
-]
+
 
 // Link users to their posts here >
 
@@ -64,7 +56,7 @@ app.post("/signup", (request, response, next) => {
 
 
 app.post("/signin", (request, response, next) => {
-  database("users_data")
+  knex("users_data")
   .where({username: request.body.username})
   .first()
   .then(user => {
