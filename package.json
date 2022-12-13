@@ -1,7 +1,7 @@
 {
-  "name": "instock-server-team-2",
+  "name": "jack-stasiulis-backyard-server",
   "version": "1.0.0",
-  "description": "instock server",
+  "description": "backyard server",
   "main": "index.js",
   "scripts": {
     "migrate": "knex migrate:latest",

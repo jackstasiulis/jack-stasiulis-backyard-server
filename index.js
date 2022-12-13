@@ -5,7 +5,9 @@ const cors = require('cors')
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const knex = require('knex')(require('../knexfile'));
+const knex = require('knex')(require('./knexfile'));
+const { v4:uuidv4 } = require('uuid');
+// const users_data = require('users_data')(require('./users'));
 
 const showRoutes = require('./routes/showRoute.js')
 
@@ -20,16 +22,16 @@ app.use('/shows', showRoutes);
 
 
 // check JWT token middleware
-function checkToken(req, res, next) {
-  const token = req.headers.authorization.split(' ')[1];
-// check an verify JWT token
-  if (token && jwt.verify(token, process.env.JWT_SECRET)) {
-    req.user = jwt.decode(token); // this attaches the decoded token to the request object
-    next();
-  } else {
-    res.send('token invalid!!!')
-  }
-}
+// function checkToken(req, res, next) {
+//   const token = req.headers.authorization.split(' ')[1];
+// // check an verify JWT token
+//   if (token && jwt.verify(token, process.env.JWT_SECRET)) {
+//     req.user = jwt.decode(token); // this attaches the decoded token to the request object
+//     next();
+//   } else {
+//     res.send('token invalid!!!')
+//   }
+// }
 
 
 
@@ -40,13 +42,17 @@ function checkToken(req, res, next) {
 // <
 
 app.post("/signup", (request, response, next) => {
+  const users_id = uuidv4();
   bcrypt.hash(request.body.password, 10)
   .then(hashedPassword => {
-     return database("users_data").insert({
+     return knex("users_data").insert({
+        users_id: users_id,
+        email: request.body.email,
         username: request.body.username,
-        password: hashedPassword
+        password: hashedPassword,
+        avatar: "X"
      })
-     .returning(["id", "username"])
+     .returning(["users_id", "username"])
      .then(users => {
         response.json(users[0])
      })
@@ -55,26 +61,29 @@ app.post("/signup", (request, response, next) => {
 })
 
 
-app.post("/signin", (request, response, next) => {
+app.post("/signin", (req, res) => {
   knex("users_data")
-  .where({username: request.body.username})
+  .where({username: req.body.username})
   .first()
   .then(user => {
      if(!user){
-        response.status(401).json({
+        res.status(401).json({
            error: "No user by that name"
         })
      }else{
+
         return bcrypt
-        .compare(request.body.password, user.password)
+        .compare(req.body.password, user.password)
         .then(isAuthenticated => {
            if(!isAuthenticated){
-              response.status(401).json({
+              res.status(401).json({
                  error: "Unauthorized Access!"
               })
+
            }else{
-              return jwt.sign(user, SECRET, (error, token) => {
-                 response.status(200).json({token})
+            console.log('WOW3')
+              return jwt.sign({user}, process.env.JWT_SECRET, (error, token) => {
+                 res.status(200).json({token})
               })
            }
         })
@@ -118,13 +127,31 @@ app.post("/signin", (request, response, next) => {
 // Checks the JWT token and returns the user object
 // we use jwt.verify() to check if the token is valid with our middleware function 'checkToken
 // if it IS valid, we send back the decoded info: our user object=
-app.get('/user-profile', checkToken, (req, res) => {
-  console.log(req.body)
-  if(req.body.username) {
-    // res.send('hi')
-    res.json({ user: req.user });
-  }
-});
+// app.get('/user-profile', checkToken, (req, res) => {
+//   console.log(req.body)
+//   if(req.body.username) {
+//     // res.send('hi')
+//     res.json({ user: req.user });
+//   }
+// });
+
+
+app.get("/verify", (request, response) => {
+  const token = request.headers.authorization.split(" ")[1]
+  jwt.verify(token, process.env.JWT_SECRET, (error, decodedToken) => {
+ 
+     if(error){
+        response.status(401).json({
+           message: "Unauthorized Access!"
+        })
+     }else{
+        response.status(200).json({
+           users_id: decodedToken.user.users_id,
+           username: decodedToken.user.username
+        })
+     }
+  })
+})
 
 
 // here we would write the checkToken request for our user posts >

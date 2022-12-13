@@ -88,7 +88,7 @@ module.exports =
         doors:'8:00PM',
         genre:'Folk',
         description: 'Zach Irish is bringing a special heartwarming nostalgia few and far between on our evening streets. Capitalize on some sweet acoustic vibes and dangerously blown speakers out at the Fringe Café.',
-        users_id:2
+        users_id:1
         // timestamp: '1628522461000'
     },
     { 

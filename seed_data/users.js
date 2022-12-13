@@ -2,7 +2,7 @@ module.exports =
 //  Our user data
 [
     {
-      id: 1,
+      users_id: 1,
       username: 'jackstas',
       email: 'jackstasiulis@gmail.com',
       password: 'backyard23',
