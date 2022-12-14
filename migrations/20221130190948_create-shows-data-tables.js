@@ -32,8 +32,9 @@ exports.up = function(knex) {
     })
     .createTable('comments_data', (table) => {
         table.uuid('comments_id').primary();
-        table.timestamp('timestamp').defaultTo(knex.fn.now());
         table.string('comments_body').notNullable()
+        table.string('username').notNullable();
+        table.timestamp('timestamp').defaultTo(knex.fn.now());
         table.integer('likes').notNullable()
         table.uuid('users_id')
             .references('users_id')
@@ -45,6 +46,8 @@ exports.up = function(knex) {
             .inTable('show_data')
             .onUpdate('cascade')
             .onDelete('cascade');
+
+        
     })
 };
 

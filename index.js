@@ -81,7 +81,6 @@ app.post("/signin", (req, res) => {
               })
 
            }else{
-            console.log('WOW3')
               return jwt.sign({user}, process.env.JWT_SECRET, (error, token) => {
                  res.status(200).json({token})
               })
@@ -123,19 +122,12 @@ app.post("/signin", (req, res) => {
 
 
 
-// This is the use profile route
+
+
+// This is the verify profile route
 // Checks the JWT token and returns the user object
 // we use jwt.verify() to check if the token is valid with our middleware function 'checkToken
-// if it IS valid, we send back the decoded info: our user object=
-// app.get('/user-profile', checkToken, (req, res) => {
-//   console.log(req.body)
-//   if(req.body.username) {
-//     // res.send('hi')
-//     res.json({ user: req.user });
-//   }
-// });
-
-
+// if it IS valid, we send back the decoded info: our user object
 app.get("/verify", (request, response) => {
   const token = request.headers.authorization.split(" ")[1]
   jwt.verify(token, process.env.JWT_SECRET, (error, decodedToken) => {
