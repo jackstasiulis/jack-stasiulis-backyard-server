@@ -7,33 +7,19 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const knex = require('knex')(require('./knexfile'));
 const { v4:uuidv4 } = require('uuid');
-// const users_data = require('users_data')(require('./users'));
 
 const showRoutes = require('./routes/showRoute.js')
 
 
 app.use(cors());
 app.use(express.json());
-// basic home route
-// app.get('/', (req, res) => {
-//   res.send('Welcome to the Backyard API');
-// });
+
 app.use('/shows', showRoutes);
 
 
 // check JWT token middleware
-// function checkToken(req, res, next) {
-//   const token = req.headers.authorization.split(' ')[1];
+
 // // check an verify JWT token
-//   if (token && jwt.verify(token, process.env.JWT_SECRET)) {
-//     req.user = jwt.decode(token); // this attaches the decoded token to the request object
-//     next();
-//   } else {
-//     res.send('token invalid!!!')
-//   }
-// }
-
-
 
 // Link users to their posts here >
 
