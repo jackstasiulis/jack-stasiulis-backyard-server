@@ -4,7 +4,7 @@ const show = (_req, res) => {
   knex('show_data')
     // .innerJoin('comments_data', 'comments_data.show_id', 'show_data.show_id')
     .then((data) => {
-        console.log(data);
+        // console.log(data);
       res.status(200).json(data);
     })
     .catch((err) =>
@@ -42,8 +42,10 @@ const deleteShow = (req, res) => {
     knex('show_data')
     .where({ show_id: req.params.show_id })
     .del()
+
     .then((data) => {
         res.status(200).json(data);
+
     })
     .catch((err) =>
     res.send(`Error deleting show: ${err} ==> ${req.params}`)
@@ -52,7 +54,7 @@ const deleteShow = (req, res) => {
 
 
 const comments = (req, res) => {
-    console.log('params', req.params.show_id)
+    // console.log('params', req.params.show_id)
     knex('comments_data')
     .where('show_id', req.params.show_id )
     .then((data) => {
@@ -64,7 +66,7 @@ const comments = (req, res) => {
 };
 
 const addComments = (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     if (
         !req.body.comments_body
     ) {
