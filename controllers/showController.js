@@ -12,6 +12,45 @@ const show = (_req, res) => {
     );
 };
 
+const addShow = (req, res) => {
+    if (
+        !req.body.show_id ||
+        !req.body.image ||
+        !req.body.artist ||
+        !req.body.date ||
+        !req.body.venue ||
+        !req.body.address ||
+        !req.body.doors ||
+        !req.body.genre ||
+        !req.body.description
+    ) {
+        return res.status(400).send('Please fill in all the fields backend')
+    } else {
+    knex('show_data')
+    .insert(req.body)
+    .then((data) => {
+        res.status(201).send('Show added!')
+    })
+    .catch((err) => {
+        console.log(err)
+        res.status(500).send('Could not add show')
+    });
+    }
+}
+
+const deleteShow = (req, res) => {
+    knex('show_data')
+    .where({ show_id: req.params.show_id })
+    .del()
+    .then((data) => {
+        res.status(200).json(data);
+    })
+    .catch((err) =>
+    res.send(`Error deleting show: ${err} ==> ${req.params}`)
+    );
+};
+
+
 const comments = (req, res) => {
     console.log('params', req.params.show_id)
     knex('comments_data')
@@ -43,31 +82,7 @@ const addComments = (req, res) => {
     }
 };
 
-const addShow = (req, res) => {
-    if (
-        !req.body.show_id ||
-        !req.body.image ||
-        !req.body.artist ||
-        !req.body.date ||
-        !req.body.venue ||
-        !req.body.address ||
-        !req.body.doors ||
-        !req.body.genre ||
-        !req.body.description
-    ) {
-        return res.status(400).send('Please fill in all the fields backend')
-    } else {
-    knex('show_data')
-    .insert(req.body)
-    .then((data) => {
-        res.status(201).send('Show added!')
-    })
-    .catch((err) => {
-        console.log(err)
-        res.status(500).send('Could not add show')
-    });
-    }
-}
+
 
 
 
@@ -89,5 +104,6 @@ module.exports ={
     comments, 
     getSingleShow,
     addComments,
-    addShow
+    addShow,
+    deleteShow
 }

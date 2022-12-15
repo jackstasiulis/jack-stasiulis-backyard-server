@@ -27,8 +27,10 @@ app.use('/shows', showRoutes);
 
 // <
 
+
 app.post("/signup", (request, response, next) => {
   const users_id = uuidv4();
+
   bcrypt.hash(request.body.password, 10)
   .then(hashedPassword => {
      return knex("users_data").insert({
