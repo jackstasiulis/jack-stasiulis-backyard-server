@@ -53,6 +53,31 @@ const deleteShow = (req, res) => {
 };
 
 
+// 2jh2oh2io3hr
+const deleteComment = (req, res) => {
+    knex('comments_data')
+    .where({
+        show_id: req.params.show_id,
+    })
+    .andWhere({
+        comments_id: req.params.comments_id
+    })
+    .del()
+    .then((data) => {
+        res.status(200).json(data);
+    })
+    .catch((err) => {
+        `error deleting comment ${err}`;
+    })
+}
+// j2bfob3ibf2oib3
+
+
+
+
+
+
+
 const comments = (req, res) => {
     // console.log('params', req.params.show_id)
     knex('comments_data')
@@ -107,5 +132,6 @@ module.exports ={
     getSingleShow,
     addComments,
     addShow,
-    deleteShow
+    deleteShow,
+    deleteComment
 }
