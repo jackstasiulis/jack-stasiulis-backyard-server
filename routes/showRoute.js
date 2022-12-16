@@ -8,7 +8,7 @@ router.route('/:show_id').get(getSingleShow);
 router.route('/:show_id').delete(deleteShow);
 
 router.route('/:show_id/comments').get(comments);
-router.route('/:show_id/comments/').post(addComments);
+router.route('/:show_id/comments').post(addComments);
 router.route('/:show_id/comments/:comments_id').delete(deleteComment);
 
 module.exports = router;

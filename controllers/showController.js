@@ -53,7 +53,6 @@ const deleteShow = (req, res) => {
 };
 
 
-// 2jh2oh2io3hr
 const deleteComment = (req, res) => {
     knex('comments_data')
     .where({
@@ -70,7 +69,6 @@ const deleteComment = (req, res) => {
         `error deleting comment ${err}`;
     })
 }
-// j2bfob3ibf2oib3
 
 
 
@@ -91,12 +89,14 @@ const comments = (req, res) => {
 };
 
 const addComments = (req, res) => {
-    // console.log(req.body)
+    console.log(req.body)
     if (
         !req.body.comments_body
     ) {
         return res.status(400).send('Please enter a comment!');
     } else{
+    console.log(req.body.comments_body)
+
     knex('comments_data')
     .insert(req.body)
     .then((data) => {
