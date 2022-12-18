@@ -79,39 +79,6 @@ app.post("/signin", (req, res) => {
 })
 
 
-
-
-
-// app.post('/signin', (req, res) => {
-//   if(req.body.username && req.body.password) {
-//     // check if user is in array of users
-//     const foundUser = users.find(
-//       (user) =>
-//         user.username === req.body.username && user.password == req.body.password
-//     );
-//     if(foundUser) {
-//       // createJWT token with id, name and avatar
-//       const jwtToken = jwt.sign(
-//         { id: foundUser.id, name: foundUser.name, avatar: foundUser.avatar },
-//         process.env.JWT_SECRET
-//       );
-//       // send a response with the JWT token
-//       res.json({
-//         message: 'Login Successful',
-//         token: jwtToken,
-//       });
-//     } else {
-//       res.status(401).send('Not a valid user');
-//     }
-//   } else{
-//     res.status(400).send('Please provide and email and password.')
-//   }
-// });
-
-
-
-
-
 // This is the verify profile route
 // Checks the JWT token and returns the user object
 // we use jwt.verify() to check if the token is valid with our middleware function 'checkToken
