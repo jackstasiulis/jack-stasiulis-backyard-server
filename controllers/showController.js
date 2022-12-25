@@ -75,7 +75,6 @@ const deleteComment = (req, res) => {
 
 
 const comments = (req, res) => {
-    // console.log('params', req.params.show_id)
     knex('comments_data')
     .where('show_id', req.params.show_id )
     .then((data) => {
@@ -113,7 +112,6 @@ const addComments = (req, res) => {
 
 const getSingleShow = (req, res) => {
     knex('show_data')
-    // .join('comments_data', {'comments_data.show_id': 'show_data.show_id'})
     .where('show_data.show_id', req.params.show_id)
         .then((data) => {
             console.log(data)
