@@ -9,7 +9,7 @@ module.exports =
         address:'2755 Prince Edward St',
         doors:'7:00 PM',
         genre:'Hip Hop / R & B',
-        description: 'Picture brockhampton but shittier',
+        description: 'Picture brockhampton but with way less money.',
         users_id:1
         // timestamp: '1628522461000'
     },
@@ -22,7 +22,7 @@ module.exports =
         address:'932 Granville',
         doors:'7:00 PM',
         genre:'Latin',
-        description: 'lets dance',
+        description: 'Grab your SO and get down to FAVIO and his smooth guitar. Fall in love again and again.',
         users_id:1
         // timestamp: '1628522461000'
     },
@@ -35,7 +35,7 @@ module.exports =
         address:'2321 Main St',
         doors:'8:00 PM',
         genre:'Rock',
-        description: 'lets rock',
+        description: 'Both not, and surely, your dads hair rock. Come rock on at the Fox before BAD MONEY brings the house down.',
         users_id:1
         // timestamp: '1628522461000'
     },
@@ -58,7 +58,7 @@ module.exports =
         artist:'frong',
         date:'Jan, 20, 2023',
         venue: "Gracie's Basement",
-        address:'TBA',
+        address:'1770 E 4th Ave',
         doors:'10:00 PM',
         genre:'Grunge',
         description: 'If you adore the mosh and throwing down a little too hard than your doctor wishes, come put your bodily health in jeopardy in our dirty basement.',
@@ -68,11 +68,11 @@ module.exports =
     {
         show_id:6,
         image: 'https://res.cloudinary.com/do5k651qd/image/upload/v1670570335/Screenshot_2022-12-08_at_11.05.56_PM_ylptko.jpg',
-        artist:'Saitumi',
+        artist:'Saituumi',
         date:'Mar, 12, 2023',
         venue:"Saiyana's Yard",
-        address:'TBA',
-        doors:'6:0PM',
+        address:'4457 W 7th Ave',
+        doors:'6:00PM',
         genre:'Indie Pop',
         description: 'Saitumi says: Come hang w us for an evening of special artist features and a plethora of genres.',
         users_id:1
@@ -84,7 +84,7 @@ module.exports =
         artist:'Zach Irish',
         date:'Mar, 20, 2023',
         venue:'The Fringe Café',
-        address:'3124 W Broadway',
+        address:'3124 W Broadway, Vancouver, BC V6K 2H2',
         doors:'8:00PM',
         genre:'Folk',
         description: 'Zach Irish is bringing a special heartwarming nostalgia few and far between on our evening streets. Capitalize on some sweet acoustic vibes and dangerously blown speakers out at the Fringe Café.',
