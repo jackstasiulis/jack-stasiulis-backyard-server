@@ -101,11 +101,7 @@ app.get("/verify", (request, response) => {
 // for future
 // here we would write the checkToken request for our user posts >
 
-
 // <
-
-
-
 
 app.listen(PORT, () => {
   console.log(`running at http://localhost:${PORT}`);

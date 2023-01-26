@@ -12,9 +12,3 @@ router.route('/:show_id/comments').post(addComments);
 router.route('/:show_id/comments/:comments_id').delete(deleteComment);
 
 module.exports = router;
-
-
-// router.route("/:inventory_id")
-//   .get(getSingleInventory)
-//   .put(updateInventory)
-//   .delete(deleteInventory);

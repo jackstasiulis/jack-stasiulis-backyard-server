@@ -1,4 +1,5 @@
 module.exports = 
+// Our comment data
     [
         {
             comments_id:1,

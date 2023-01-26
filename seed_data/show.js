@@ -1,4 +1,5 @@
 module.exports = 
+// Our show data
 [
     {
         show_id:1,
