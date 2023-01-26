@@ -16,14 +16,12 @@ app.use(express.json());
 
 app.use('/shows', showRoutes);
 
-
+// for future
 // check JWT token middleware
 
 // // check an verify JWT token
 
 // Link users to their posts here >
-
-
 
 // <
 
@@ -100,7 +98,7 @@ app.get("/verify", (request, response) => {
   })
 })
 
-
+// for future
 // here we would write the checkToken request for our user posts >
 
 
