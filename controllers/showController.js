@@ -71,9 +71,6 @@ const deleteComment = (req, res) => {
 
 
 
-
-
-
 const comments = (req, res) => {
     knex('comments_data')
     .where('show_id', req.params.show_id )
@@ -105,8 +102,6 @@ const addComments = (req, res) => {
     });
     }
 };
-
-
 
 
 
