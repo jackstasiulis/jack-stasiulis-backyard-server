@@ -50,7 +50,6 @@ const deleteShow = (req, res) => {
     );
 };
 
-
 const deleteComment = (req, res) => {
     knex('comments_data')
     .where({
@@ -67,9 +66,6 @@ const deleteComment = (req, res) => {
         `error deleting comment ${err}`;
     })
 }
-
-
-
 
 const comments = (req, res) => {
     knex('comments_data')
@@ -102,8 +98,6 @@ const addComments = (req, res) => {
     });
     }
 };
-
-
 
 const getSingleShow = (req, res) => {
     knex('show_data')
