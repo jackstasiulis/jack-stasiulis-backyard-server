@@ -9,7 +9,6 @@ module.exports =
             likes:'0',
             users_id: 1,
             show_id: 1
-            
         },
         {
             comments_id:2,
@@ -19,7 +18,6 @@ module.exports =
             likes:'0',
             users_id: 1,
             show_id: 1
-            
         }
     ]
 
